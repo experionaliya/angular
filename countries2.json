@@ -1,0 +1,25 @@
+[
+  {
+    "name": "China",
+    "population": 13598,
+    "flagURL": "https://upload.wikimedia.org/wikipedia/commons/f/fa/Flag_of_the_People%27s_Republic_of_China.svg",
+    "capital":"Beiging",
+    "gdp":1234
+  },
+  {
+    "name": "India",
+    "population": 15625,
+    "flagURL": "https://upload.wikimedia.org/wikipedia/en/4/41/Flag_of_India.svg",
+    "capital":"New Delhi",
+    "gdp":124
+   
+  },
+  {
+    "name": "USA",
+    "population": 300,
+    "flagURL": "https://upload.wikimedia.org/wikipedia/en/a/a4/Flag_of_the_United_States.svg",
+    "capital":"Washington DC",
+    "gdp":34
+    
+  }
+]

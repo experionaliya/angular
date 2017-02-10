@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>angular</title>
+	    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+</head>
+<body>
+Name: <input id="t1" type="text">
+Hello<span id="content"></span>
+</body>
+<script>
+	$('#t1').on('keyup',function(){
+		$('#content').html($('#t1').val());
+	});
+</script>
+</html>

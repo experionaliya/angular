@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html ng-app="nameApp">
+<head>
+	<title>angular</title>
+	 <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.2.1/angular.min.js"></script>
+	 <script>
+	 var nameApp=angular.module('nameApp',[]);
+	 nameApp.controller('sampleCtrl', function($scope){
+	 	
+	 	$scope.fname=['xyz','abc','pqr'];
+	 	$scope.samp=function(){
+	 		$scope.fname.push($scope.txt);
+	 	}
+	 	
+	 });
+	 </script>
+</head>
+<body ng-controller="sampleCtrl">
+<ul>
+<li ng-repeat="name in fname track by $index">{{name}}</li>
+</ul>
+<form ng-submit="samp()">
+<input type="text" ng-model="txt">
+<input type="submit" value="add">
+</form>
+</body>
+</html>

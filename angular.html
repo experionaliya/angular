@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>angular</title>
+</head>
+<body>
+Name: <input id="t1" type="text">
+<span id="content"></span>
+</body>
+<script>
+	var textbox=document.getElementById("t1");
+	var text=document.getElementById("content");
+	textbox.addEventListener('keyup',function(){
+		console.log("pqr");
+		console.log(textbox.value);
+		text.innerHTML=textbox.value;
+	});
+</script>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html ng-app="nameApp">
+<head>
+	<title>angular</title>
+	 <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.2.1/angular.min.js"></script>
+	 <script>
+	 var nameApp=angular.module('nameApp',[]);
+	 nameApp.controller('sampleCtrl', ['$scope','$http',function(scope,http){
+	 	
+	 http.get('countries.json').success(function(data){
+	 		scope.countries=data;
+	 	});	
+	 }]);
+	 </script>
+</head>
+<body ng-controller="sampleCtrl">
+<table>
+	<tr>
+		<th>COUNTRY</th>
+		<th>POPULATION</th>
+	</tr>
+	<tr ng-repeat="country in countries">
+		<td>{{country.name}}</td>
+		<td>{{country.population}}</td>
+	</tr>
+</table>
+</body>
+</html>
