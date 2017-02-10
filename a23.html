@@ -1,0 +1,36 @@
+<html ng-app="sampleApp">
+<head>
+<title>Angular</title>
+<script src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.2.10/angular.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.2.10/angular-route.min.js"></script>
+<script>
+  var sampleApp = angular.module('sampleApp', ['ngRoute']);
+  sampleApp.config(function($routeProvider) {
+    $routeProvider.
+      when('/', {
+        templateUrl: 'countrylist.html',
+        controller: 'countryCtrl'
+      }).
+      when('/:countryName', {
+        templateUrl: 'country
+        detail.html',
+        controller: 'detailCtrl'
+      }).
+     otherwise({
+         redirectTo: '/'
+     });
+  });
+sampleApp.controller('countryCtrl', function ($scope, $http){
+   $http.get('countries.json').success(function(data) {
+       $scope.countries = data;
+    });
+});
+sampleApp.controller('detailCtrl', function ($scope, $routeParams){
+   $scope.name = $routeParams.countryName;
+});
+</script>
+</head>
+<body>
+<div ng-view></div>
+</body>
+</html>
